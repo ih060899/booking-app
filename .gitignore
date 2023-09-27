@@ -1,0 +1,62 @@
+
+# Compiled binary files
+*.exe
+*.o
+*.out
+
+# Dependency directories (common package managers)
+/vendor/
+/Godeps/
+/go.sum
+/go.mod
+
+# Build output
+/bin/
+/dist/
+/pkg/
+
+# Editor and IDE-specific files
+.vscode/
+.idea/
+*.swp
+
+# Test cache
+/test_output/
+
+# Ignore any files that might contain sensitive information (e.g., configuration files)
+*.env
+
+# Exclude any generated files or directories
+/.cache/
+/pkg/
+/bin/
+/vendor/
+/dist/
+
+# Exclude binary and debug files
+*.bak
+*.log
+*.test
+*.prof
+
+
+# Node.js dependencies
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# Environment variables (if you use a .env file)
+.env
+
+# Editor and IDE files
+.vscode/
+.idea/
+
+# Dependency lock files
+package-lock.json
+yarn.lock
+
+# Configuration files that may contain sensitive information
+config.json
