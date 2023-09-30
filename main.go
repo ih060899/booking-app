@@ -3,6 +3,7 @@ package main
 import (
 	"booking-app/helper"
 	"fmt"
+	"time"
 )
 
 var conferenceName = "Go Conference"
@@ -35,6 +36,7 @@ func main() {
 
 		if isValidTicketNumber && isValidName && isValidEmail {
 			bookTicket(userTickets, firstName, lastName, email)
+			go sendTicket(userTickets, firstName, lastName, email)
 
 			firstNames := getFirstNames()
 			fmt.Printf("The first names of bookings are: %v\n", firstNames)
@@ -126,4 +128,12 @@ func greetUsers() {
 	fmt.Printf("We have total of %v tickets and %v are still available\n",
 		conferenceTickets, remainingTickets)
 	fmt.Println("Get your tickets here to attend")
+}
+
+func sendTicket(userTickets uint, firstName string, lastName string, email string) {
+	time.Sleep(10 * time.Second)
+	ticket := fmt.Sprintf("%v tickets for %v %v", userTickets, firstName, lastName)
+	fmt.Println("#######################")
+	fmt.Printf("Sending ticket:\n%v to email address %v\n", ticket, email)
+	fmt.Println("#######################")
 }
